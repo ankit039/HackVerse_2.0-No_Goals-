@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cp"
+    tools:context=".Activities.SignUpActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/step_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <ImageButton
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/log_in_button" />
+
+            <LinearLayout
+                android:id="@+id/edit_texts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@drawable/edittext_login_border"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Your Name"
+                    android:inputType="textPersonName"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@drawable/edittext_login_border"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="UserName [should not contain '@']"
+                    android:inputType="textPersonName"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@drawable/edittext_login_border"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Your Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/pswd1"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@drawable/edittext_login_border"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Your Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/pswd2"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@drawable/edittext_login_border"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#FFFFFF"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/text_welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_pic"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserrat"
+                    android:text="CREATE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text=" ACCOUNT"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_texts"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp">
+
+                <ImageButton
+                    android:id="@+id/sign_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/sign_up" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/button"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:text="Select a profile pic before signing up.\nIt will create an admin account, so you need to enter the passcode for security reasons."
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="180dp"
+                android:layout_height="3.5dp"
+                android:layout_below="@id/text_welcome"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="#FFFFFF" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_alignParentBottom="true"
+                android:background="#053383" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/add_pic"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/add_pic" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/step_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/skill_head"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserrat"
+                    android:text="SELECT"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text=" SKILLS"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/skills_select"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view2"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/skill_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" JavaScript"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+                <CheckBox
+                    android:id="@+id/skill_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" Django"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+                <CheckBox
+                    android:id="@+id/skill_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" React"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+                <CheckBox
+                    android:id="@+id/skill_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" C/C++"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+                <CheckBox
+                    android:id="@+id/skill_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" JAVA"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+                <CheckBox
+                    android:id="@+id/skill_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" Kotlin"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+                <CheckBox
+                    android:id="@+id/skill_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" Python"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+                <CheckBox
+                    android:id="@+id/skill_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" Machine Learning"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+                <CheckBox
+                    android:id="@+id/skill_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" Digital Marketing"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+                <CheckBox
+                    android:id="@+id/skill_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#FFFFFF"
+                    android:fontFamily="@font/montserrat"
+                    android:text=" UI/UX Design"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/skills_select"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp">
+
+                <ImageButton
+                    android:id="@+id/sign_up2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/sign_up" />
+
+                <ProgressBar
+                    android:id="@+id/progress_circular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="180dp"
+                android:layout_height="3.5dp"
+                android:layout_below="@id/skill_head"
+                android:layout_centerHorizontal="true"
+                android:background="#FFFFFF" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

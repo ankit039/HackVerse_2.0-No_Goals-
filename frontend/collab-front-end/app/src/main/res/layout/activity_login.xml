@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#47b5be"
+    tools:context=".Activities.LogInActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="60dp"
+        android:id="@+id/logo"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/logo"
+        android:id="@+id/text_welcome"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/montserrat"
+            android:text="Welcome to"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:text=" Collab"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/edit_texts"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/text_welcome"
+        android:gravity="center_horizontal">
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@drawable/edittext_login_border"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:hint="USERNAME"
+            android:paddingEnd="10dp"
+            android:inputType="textEmailAddress"
+            android:textColorHint="#71dfe2"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/montserrat"
+            android:textSize="20sp"
+            android:paddingStart="20dp"
+            android:drawableStart="@drawable/email_logo"
+            android:drawablePadding="14dp"/>
+
+        <EditText
+            android:layout_marginTop="18dp"
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@drawable/edittext_login_border"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:inputType="textPassword"
+            android:fontFamily="@font/montserrat"
+            android:hint="PASSWORD"
+            android:paddingEnd="10dp"
+            android:textColorHint="#71dfe2"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:paddingStart="20dp"
+            android:drawableStart="@drawable/pass_logo"
+            android:drawablePadding="14dp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/button"
+        android:layout_below="@id/edit_texts"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/submit_button_login"
+            android:fontFamily="@font/montserrat"
+            android:text="SIGN IN"
+            android:textColor="#00476E"
+            android:textSize="28sp" />
+
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/progress_circular"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="#053383"/>
+
+    <ImageButton
+        android:id="@+id/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/view"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentEnd="true"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/sign_up_button_log_in" />
+
+</RelativeLayout>
