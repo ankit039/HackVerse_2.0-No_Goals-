@@ -1,5 +1,6 @@
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
+var bodyParser = require("body-parser");
 
 //jwt token
 // /const auth = require("./auth_jwt");
@@ -69,7 +70,7 @@ createContactTable();
 //   );
 
 const apiRouter = require("./api/apiRoute");
-app.use(express.bodyParser({limit: '10mb'}));
+app.use(bodyParser({limit: '10mb'}));
 app.use("/api", cors(), apiRouter);
 
 console.log(`server listening on port: ${port}`);
