@@ -3,8 +3,9 @@ const database = new sqlite3.Database("db.db");
 
 exports.getuserbyskills = (tokendata, req, res) => {
   const { username } = req.body;
-  database.get(
-    `SELECT skills FROM user WHERE username = "${username}";`,
+  //skill form for logged user
+  database.all(
+    `SELECT uid,username,fullName,emailId,image,skills,connect,accept,reject FROM user where userName <> "${username}";`,
     function (err, rows) {
       if (err) {
         res.statusCode = 403;
@@ -12,21 +13,9 @@ exports.getuserbyskills = (tokendata, req, res) => {
         res.json({ sucess: false, msg: err.message });
       } else {
         //skill form for logged user
-        database.all(
-          `SELECT uid,username, fullName, emailId, image, skills, connect, accept , reject FROM user where userName <> "${username}";`,
-          function (err, rows) {
-            if (err) {
-              res.statusCode = 403;
-              res.setHeader("Content-Type", "application/json");
-              res.json({ sucess: false, msg: err.message });
-            } else {
-              //skill form for logged user
-              res.statusCode = 200;
-              res.setHeader("Content-Type", "application/json");
-              res.json({ sucess: true, msg: "scucess", rows: rows });
-            }
-          }
-        );
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.json({ sucess: true, msg: "scucess", rows: rows });
       }
     }
   );

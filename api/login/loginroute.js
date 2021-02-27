@@ -47,6 +47,7 @@ exports.login = (req, res) => {
                       res.json({
                         sucess: true,
                         msg: "Login Sucess",
+                        uid: rows.uid,
                         userName: rows.userName,
                         fullName: rows.fullName,
                         emailId: rows.emailId,
@@ -69,7 +70,7 @@ exports.login = (req, res) => {
     );
   } else {
     database.get(
-      `SELECT * FROM user WHERE username = "${credential}";`,
+      `SELECT * FROM user WHERE userName = "${credential}";`,
       function (err, rows) {
         if (err) {
           res.statusCode = 403;
@@ -84,7 +85,7 @@ exports.login = (req, res) => {
           } else {
             //email found
             database.get(
-              `SELECT * FROM user WHERE username = "${credential}";`,
+              `SELECT * FROM user WHERE userName = "${credential}";`,
               function (err, rows) {
                 if (err) {
                   res.statusCode = 403;
@@ -106,6 +107,7 @@ exports.login = (req, res) => {
                       res.json({
                         sucess: true,
                         msg: "Login Sucess",
+                        uid: rows.uid,
                         userName: rows.userName,
                         fullName: rows.fullName,
                         emailId: rows.emailId,
