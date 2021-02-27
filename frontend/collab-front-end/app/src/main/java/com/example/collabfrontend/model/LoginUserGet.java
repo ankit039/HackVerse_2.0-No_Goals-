@@ -12,6 +12,9 @@ public class LoginUserGet {
     @SerializedName("msg")
     @Expose
     private String msg;
+    @SerializedName("uid")
+    @Expose
+    private long uid;
     @SerializedName("userName")
     @Expose
     private String userName;
@@ -44,13 +47,13 @@ public class LoginUserGet {
     private String expiration;
 
     public LoginUserGet() {
-
     }
 
-    public LoginUserGet(boolean sucess, String msg, String userName, String fullName, String emailId, String image, String skills, String connect, String reject, String accept, String token, String expiration) {
+    public LoginUserGet(boolean sucess, String msg, long uid, String userName, String fullName, String emailId, String image, String skills, String connect, String reject, String accept, String token, String expiration) {
         super();
         this.sucess = sucess;
         this.msg = msg;
+        this.uid = uid;
         this.userName = userName;
         this.fullName = fullName;
         this.emailId = emailId;
@@ -77,6 +80,14 @@ public class LoginUserGet {
 
     public void setMsg(String msg) {
         this.msg = msg;
+    }
+
+    public long getUid() {
+        return uid;
+    }
+
+    public void setUid(long uid) {
+        this.uid = uid;
     }
 
     public String getUserName() {
@@ -164,6 +175,7 @@ public class LoginUserGet {
         return "LoginUserGet{" +
                 "sucess=" + sucess +
                 ", msg='" + msg + '\'' +
+                ", uid=" + uid +
                 ", userName='" + userName + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", emailId='" + emailId + '\'' +

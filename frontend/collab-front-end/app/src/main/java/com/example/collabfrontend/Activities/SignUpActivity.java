@@ -220,13 +220,6 @@ public class SignUpActivity extends AppCompatActivity {
 
                 imagetxt = encodedImage;
 
-                // TODO convert to image from base 64
-                /*
-                byte[] decodedString = Base64.decode(imagetxt, Base64.DEFAULT);
-                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-                addpic.setImageBitmap(decodedByte);
-                 */
-
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
                 Log.e("this", String.valueOf(error));

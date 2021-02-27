@@ -90,20 +90,20 @@ public class LogInActivity extends AppCompatActivity {
         call.enqueue(new Callback<LoginUserGet>() {
             @Override
             public void onResponse(Call<LoginUserGet> call, Response<LoginUserGet> response) {
-                LoginUserGet result_got = response.body();
-                if(result_got.isSucess()){
-                    Toast.makeText(LogInActivity.this, "Login Successful!!", Toast.LENGTH_SHORT).show();
-                    Paper.book().write("currUser", result_got);
-                    Intent intent = new Intent(LogInActivity.this, MainActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                }else if(!result_got.isSucess()){
-                    Toast.makeText(LogInActivity.this, "User not Registered!!", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(LogInActivity.this, "Some Error Occurred!!", Toast.LENGTH_SHORT).show();
-                }
+                try{
+                    LoginUserGet result_got = response.body();
+                    Log.e("this", result_got.toString());
 
-                Log.e("this", result_got.toString());
+                    if(result_got.isSucess()){
+                        Toast.makeText(LogInActivity.this, "Login Successful!!", Toast.LENGTH_SHORT).show();
+                        Paper.book().write("currUser", result_got);
+                        Intent intent = new Intent(LogInActivity.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                }catch(Exception e){
+                    Toast.makeText(LogInActivity.this, "Some Error Occurred, Try Again!!\n Please Register if you haven't!", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
