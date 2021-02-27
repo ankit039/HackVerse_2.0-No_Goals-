@@ -79,6 +79,70 @@ apiRouter.route("/login").post((req, res, next) => {
       }
     );
   } else {
+    database.get(
+      `SELECT * FROM user WHERE username = "${credential}";`,
+      function (err, rows) {
+        if (err) {
+          res.statusCode = 403;
+          res.setHeader("Content-Type", "application/json");
+          res.json([{ sucess: false, msg: err.message }]);
+        } else {
+          if (!rows) {
+            //email not found
+            res.statusCode = 403;
+            res.setHeader("Content-Type", "application/json");
+            res.json([{ sucess: false, msg: "E-mail is not regsitered." }]);
+          } else {
+            //email found
+            database.get(
+              `SELECT * FROM user WHERE username = "${credential}";`,
+              function (err, rows) {
+                if (err) {
+                  res.statusCode = 403;
+                  res.setHeader("Content-Type", "application/json");
+                  res.json([{ sucess: false, msg: err.message }]);
+                } else {
+                  const pwd_check = bcrypt.compareSync(password, rows.password);
+                  if (pwd_check == false) {
+                    //if password not matched
+                    res.statusCode = 403;
+                    res.setHeader("Content-Type", "application/json");
+                    res.json([{ sucess: false, msg: "Password not matched." }]);
+                  } else {
+                    //password matched
+                    // const token_enrno = auth.verifyToken(req, res, next);
+                    auth.getToken(credential).then((token) => {
+                      res.statusCode = 200;
+                      res.setHeader("Content-Type", "application/json");
+                      res.json([
+                        {
+                          sucess: true,
+                          msg: "Login Sucess",
+                          username: rows.username,
+                          fullName: rows.fullName,
+                          emailId: rows.emailId,
+                          image: rows.image,
+                          skills:
+                            rows.skills == "" ? [] : rows.skills.split(","),
+                          connect:
+                            rows.connect == "" ? [] : rows.connect.split(","),
+                          reject:
+                            rows.reject == "" ? [] : rows.reject.split(","),
+                          accept:
+                            rows.accept == "" ? [] : rows.accept.split(","),
+                          token: token,
+                          expiration: "1hr",
+                        },
+                      ]);
+                    });
+                  }
+                }
+              }
+            );
+          }
+        }
+      }
+    );
   }
 });
 
