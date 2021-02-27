@@ -70,7 +70,9 @@ createContactTable();
 //   );
 
 const apiRouter = require("./api/apiRoute");
+
 app.use(bodyParser({limit: '10mb'}));
+
 app.use("/api", cors(), apiRouter);
 
 console.log(`server listening on port: ${port}`);
