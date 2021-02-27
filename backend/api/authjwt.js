@@ -16,7 +16,7 @@ exports.getToken = (logindatax) =>
     }
   });
 
-exports.verifyToken = (token) => {
+exports.verifyToken = (token,req,res) => {
   const fun1 = () => {
     const parse_token = token;
     const fun2 = jwt.verify(
@@ -24,9 +24,16 @@ exports.verifyToken = (token) => {
       process.env.secretKey,
       function (err, decoded) {
         if (err) {
+          res.statusCode = 403;
+          res.setHeader("Content-Type", "application/json");
+          res.json([{ sucess: false, msg: err.name }]);
           return false;
         } else {
-          return decoded.logindata;
+          if (decoded.logindata.includes("@")) {
+            return { emailId: decoded.logindata };
+          } else {
+            return { username: decoded.logindata };
+          }
         }
       }
     );
@@ -34,4 +41,4 @@ exports.verifyToken = (token) => {
   };
   const last = fun1();
   return last;
-}
+};
