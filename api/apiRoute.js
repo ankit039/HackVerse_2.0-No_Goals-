@@ -98,7 +98,7 @@ apiRouter.route("/register").post((req, res, next) => {
   const hashpw = bcrypt.hashSync(password, saltRounds);
   database.run(
     `insert into user (username, fullName, emailId, password, image, skills, connect, accept , reject) VALUES (
-          "${username}","${fullName}","${emailId}","${hashpw}","${skills}","${image}","${connect}","${accept}","${reject}"
+          "${username}","${fullName}","${emailId}","${hashpw}","${image}","${skills}","${connect}","${accept}","${reject}"
         );`,
     (err) => {
       if (err) {
