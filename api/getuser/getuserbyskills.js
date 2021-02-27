@@ -23,7 +23,7 @@ exports.getuserbyskills = (tokendata, req, res) => {
               //skill form for logged user
               res.statusCode = 200;
               res.setHeader("Content-Type", "application/json");
-              res.json([{ sucess: true, msg: "scucess", rows: rows }]);
+              res.json({ sucess: true, msg: "scucess", rows: rows });
             }
           }
         );
