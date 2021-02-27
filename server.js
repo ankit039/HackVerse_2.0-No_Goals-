@@ -20,6 +20,7 @@ const createContactTable = () => {
         fullName VARCHAR(255),
         emailId VARCHAR(255) UNIQUE,
         password VARCHAR(255),
+        image TEXT,
         skills VARCHAR(255),
         connect VARCHAR(255),
         reject VARCHAR(255),
@@ -30,12 +31,12 @@ const createContactTable = () => {
 //[0,1,2,3,4,5,6]
 
 // let usertab = [
-//     ["ankit039","Ankit R","itsrankit@gmail.com","$2b$10$JGOti0UsZNbQ3aU/jxiWyexVZizMHd/9u6roDrB7VtvMGg6wjdX2a","0,1,2,3","","",""]
+//     ["ankit039","Ankit R","itsrankit@gmail.com","$2b$10$JGOti0UsZNbQ3aU/jxiWyexVZizMHd/9u6roDrB7VtvMGg6wjdX2a","","0,1,2,3","",""]
 //   ];
   
 //   let q1 =
-//     "insert into user (username, fullName, emailId, password, skills, connect, accept , reject) " +
-//     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+//     "insert into user (username, fullName, emailId, password, image, skills, connect, accept , reject) " +
+//     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
   
 //   let s1 = database.prepare(q1);
   

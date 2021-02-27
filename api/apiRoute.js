@@ -56,6 +56,7 @@ apiRouter.route("/login").post((req, res, next) => {
                           username: rows.username,
                           fullName: rows.fullName,
                           emailId: rows.emailId,
+                          image: rows.image,
                           skills:
                             rows.skills == "" ? [] : rows.skills.split(","),
                           connect:
@@ -89,14 +90,15 @@ apiRouter.route("/register").post((req, res, next) => {
     emailId,
     password,
     skills,
+    image,
     connect,
     accept,
     reject,
   } = req.body;
   const hashpw = bcrypt.hashSync(password, saltRounds);
   database.run(
-    `insert into user (username, fullName, emailId, password, skills, connect, accept , reject) VALUES (
-          "${username}","${fullName}","${emailId}","${hashpw}","${skills}","${connect}","${accept}","${reject}"
+    `insert into user (username, fullName, emailId, password, image, skills, connect, accept , reject) VALUES (
+          "${username}","${fullName}","${emailId}","${hashpw}","${skills}","${image}","${connect}","${accept}","${reject}"
         );`,
     (err) => {
       if (err) {
