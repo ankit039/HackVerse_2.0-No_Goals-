@@ -9,7 +9,7 @@ exports.getuserbyskills = (tokendata, req, res) => {
       if (err) {
         res.statusCode = 403;
         res.setHeader("Content-Type", "application/json");
-        res.json([{ sucess: false, msg: err.message }]);
+        res.json({ sucess: false, msg: err.message });
       } else {
         //skill form for logged user
         database.all(
@@ -18,7 +18,7 @@ exports.getuserbyskills = (tokendata, req, res) => {
             if (err) {
               res.statusCode = 403;
               res.setHeader("Content-Type", "application/json");
-              res.json([{ sucess: false, msg: err.message }]);
+              res.json({ sucess: false, msg: err.message });
             } else {
               //skill form for logged user
               res.statusCode = 200;

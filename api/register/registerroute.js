@@ -29,11 +29,11 @@ exports.regsiter = (req, res) => {
       if (err) {
         res.statusCode = 403;
         res.setHeader("Content-Type", "application/json");
-        res.json([{ sucess: false, msg: err.message }]);
+        res.json({ sucess: false, msg: err.message });
       } else {
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
-        res.json([{ sucess: true, msg: "Register Sucess" }]);
+        res.json({ sucess: true, msg: "Register Sucess" });
       }
     }
   );
