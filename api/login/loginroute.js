@@ -53,7 +53,7 @@ exports.login=(req,res)=>{
                              emailId: rows.emailId,
                              image: rows.image,
                              skills:
-                               rows.skills == "" ? [] : parseInt(rows.skills.split(",")),
+                               rows.skills == "" ? [] : rows.skills.split(","),
                              connect:
                                rows.connect == "" ? [] : rows.connect.split(","),
                              reject:
