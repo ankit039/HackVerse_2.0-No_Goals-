@@ -51,16 +51,16 @@ const createContactTable = () => {
 };
 createContactTable();
 
-database.all(
-    `SELECT * FROM user`,
-    function (err, rows) {
-      if (err) {
-        reject(err);
-      } else {
-          console.log(rows);
-      }
-    }
-  );
+// database.all(
+//     `SELECT * FROM user`,
+//     function (err, rows) {
+//       if (err) {
+//         reject(err);
+//       } else {
+//           console.log(rows);
+//       }
+//     }
+//   );
 
 const apiRouter = require("./api/apiRoute");
 app.use("/api", cors(), apiRouter);
