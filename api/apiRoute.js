@@ -25,6 +25,14 @@ apiRouter.post("/getuserbyskills", function (req, res, next) {
     : "";
 });
 
+apiRouter.post("/getuserbyuid", function (req, res, next) {
+  const tokendata = auth.verifyToken(req.body.token, req, res);
+  tokendata != false
+    ? getuserbyskills.getuserbyuid(req, res, next)
+    : "";
+});
+
+
 apiRouter.post("/update", function (req, res, next) {
   const tokendata = auth.verifyToken(req.body.token, req, res);
   tokendata != false ? update.feild(req, res, next) : "";
