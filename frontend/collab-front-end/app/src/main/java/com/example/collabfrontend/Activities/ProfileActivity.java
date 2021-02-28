@@ -10,6 +10,7 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.collabfrontend.R;
 import com.example.collabfrontend.model.LoginUserGet;
@@ -37,6 +38,20 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ProfileActivity.this, ConnectionsActivity.class));
+            }
+        });
+
+        accepted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, AcceptedActivity.class));
+            }
+        });
+
+        rejected.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ProfileActivity.this, "Font-End Will be developed soon!!", Toast.LENGTH_SHORT).show();
             }
         });
 
