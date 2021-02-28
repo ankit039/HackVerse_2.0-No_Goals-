@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-	<img src="https://im2.ezgif.com/tmp/ezgif-2-afc0f1958e92.gif" width="300">
+	<img src="https://lh6.googleusercontent.com/AzOxMJ5sYLaU401tMrOqcRS1a2MXVykt_lHujZn7mPd5cQFXcHpnp9ETQK8k-yA3vjfVcSdK3LlTAa8lYxuo=w1960-h2410-rw" width="300">
 </p>
 
 
