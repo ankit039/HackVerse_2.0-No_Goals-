@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
@@ -14,7 +13,6 @@ import android.widget.TextView;
 
 import com.example.collabfrontend.R;
 import com.example.collabfrontend.model.LoginUserGet;
-import com.example.collabfrontend.model.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +21,7 @@ import io.paperdb.Paper;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    TextView logout, name, skills1;
+    TextView logout, name, skills1, connections, accepted, rejected;
     ImageView logo;
     LoginUserGet currUser;
 
@@ -32,7 +30,15 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        Paper.init(this);
         init();
+
+        connections.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, ConnectionsActivity.class));
+            }
+        });
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +91,9 @@ public class ProfileActivity extends AppCompatActivity {
         logo = findViewById(R.id.logo);
         name = findViewById(R.id.name);
         skills1 = findViewById(R.id.skills);
+        connections = findViewById(R.id.connections);
+        accepted = findViewById(R.id.accepted);
+        rejected = findViewById(R.id.rejected);
     }
 
 

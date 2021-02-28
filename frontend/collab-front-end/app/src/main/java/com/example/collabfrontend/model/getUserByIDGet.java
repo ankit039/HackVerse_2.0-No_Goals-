@@ -51,4 +51,12 @@ public class getUserByIDGet {
         this.rows = rows;
     }
 
+    @Override
+    public String toString() {
+        return "getUserByIDGet{" +
+                "sucess=" + sucess +
+                ", msg='" + msg + '\'' +
+                ", rows=" + rows +
+                '}';
+    }
 }

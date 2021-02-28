@@ -37,6 +37,7 @@ public class MatchedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matched);
 
+        Paper.init(this);
         init();
         Intent intent = getIntent();
         one = intent.getExtras().getString("one");

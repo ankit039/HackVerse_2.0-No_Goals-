@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CollabFrontEnd">
-        <activity android:name=".Activities.MatchedActivity"></activity>
+        <activity android:name=".Activities.ConnectionsActivity"></activity>
+        <activity android:name=".Activities.MatchedActivity" />
         <activity android:name=".Activities.ProfileActivity" />
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".SplashActivity" />
