@@ -20,14 +20,14 @@ exports.feild = (req, res) => {
   //for updating data
   database.all(
     `UPDATE user SET 
-    userName="${userName}", 
-    fullName"${fullName}", 
-    emailId="${emailId}", 
-    image="${image}", 
-    skills="${skills}", 
-    connect="${connect}", 
-    accept="${accept}", 
-    reject="${reject}" 
+    userName= "${userName}", 
+    fullName= "${fullName}", 
+    emailId= "${emailId}", 
+    image= "${image}", 
+    skills= "${skills}", 
+    connect= "${connect}", 
+    accept= "${accept}", 
+    reject= "${reject}" 
     where uid = "${uid}";`,
     function (err, rows) {
       if (err) {
