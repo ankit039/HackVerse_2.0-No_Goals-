@@ -8,7 +8,7 @@ exports.getToken = (logindatax) =>
     if (logindata) {
       resolve(
         jwt.sign({ logindata: logindata }, process.env.secretKey, {
-          expiresIn: "1h",
+          expiresIn: "10h",
         })
       );
     } else {

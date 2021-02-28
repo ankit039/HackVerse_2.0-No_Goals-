@@ -20,3 +20,23 @@ exports.getuserbyskills = (tokendata, req, res) => {
     }
   );
 };
+
+exports.getuserbyuid = (req, res) => {
+  const { uid } = req.body;
+  //deatils for perticular user
+  database.all(
+    `SELECT uid,username,fullName,emailId,image,skills,connect,accept,reject FROM user where uid = "${uid}";`,
+    function (err, rows) {
+      if (err) {
+        res.statusCode = 403;
+        res.setHeader("Content-Type", "application/json");
+        res.json({ sucess: false, msg: err.message });
+      } else {
+        //skill form for logged user
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.json({ sucess: true, msg: "scucess", rows: rows });
+      }
+    }
+  );
+};
