@@ -6,6 +6,10 @@ import com.example.collabfrontend.model.LoginUserGet;
 import com.example.collabfrontend.model.LoginUserPost;
 import com.example.collabfrontend.model.SignUpGet;
 import com.example.collabfrontend.model.SignUpPost;
+import com.example.collabfrontend.model.UpdateGet;
+import com.example.collabfrontend.model.UpdatePost;
+import com.example.collabfrontend.model.getUserByIDGet;
+import com.example.collabfrontend.model.getUserByIDPost;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -22,5 +26,11 @@ public interface Api {
 
     @POST("register")
     Call<SignUpGet> signupUser(@Body SignUpPost post);
+
+    @POST("update")
+    Call<UpdateGet> updateData(@Body UpdatePost post);
+
+    @POST("getuserbyuid")
+    Call<getUserByIDGet> getuserbyuid(@Body getUserByIDPost post);
 
 }
