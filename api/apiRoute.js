@@ -27,7 +27,7 @@ apiRouter.post("/getuserbyskills", function (req, res, next) {
 
 apiRouter.post("/update", function (req, res, next) {
   const tokendata = auth.verifyToken(req.body.token, req, res);
-  tokendata != false ? update.feild(tokendata, req, res, next) : "";
+  tokendata != false ? update.feild(req, res, next) : "";
 });
 
 apiRouter.post("/updatepassword", function (req, res, next) {

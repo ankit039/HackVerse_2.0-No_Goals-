@@ -21,7 +21,7 @@ exports.feild = (req, res) => {
   database.all(
     `UPDATE user SET 
     userName="${userName}", 
-    fullName"${fullName}", 
+    fullName="${fullName}", 
     emailId="${emailId}", 
     image="${image}", 
     skills="${skills}", 
