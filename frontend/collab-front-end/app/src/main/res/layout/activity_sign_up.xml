@@ -15,7 +15,7 @@
             android:id="@+id/step_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <ImageButton
                 android:id="@+id/login"
@@ -212,7 +212,7 @@
             android:id="@+id/step_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <LinearLayout
                 android:id="@+id/skill_head"
